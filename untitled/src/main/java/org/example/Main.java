@@ -1,17 +1,36 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import messagequeue.Message;
+import messagequeue.MessageQueueService;
+import usageservice.UsageConsumer;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+public class Main {
+    public static void main(String[] args) throws InterruptedException {
+        // Nachrichtenschlange wird erstellt
+        MessageQueueService queue = new MessageQueueService();
+
+        // Consumer wird gestartet (in eigenem Thread)
+        UsageConsumer consumer = new UsageConsumer(queue);
+        Thread consumerThread = new Thread(() -> {
+            try {
+                consumer.start();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        consumerThread.start();
+
+        // Simuliere den EnergyProducer, der Nachrichten in die Queue schickt
+        for (int i = 0; i < 3; i++) {
+            Message msg = new Message(Message.MessageType.PRODUCE, "Produktionseintrag " + i);
+            queue.sendMessage(msg);
+            Thread.sleep(500); // kleine Pause
+        }
+
+        for (int i = 0; i < 2; i++) {
+            Message msg = new Message(Message.MessageType.CONSUME, "Verbrauchseintrag " + i);
+            queue.sendMessage(msg);
+            Thread.sleep(500); // kleine Pause
         }
     }
 }
