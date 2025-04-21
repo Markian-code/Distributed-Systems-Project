@@ -5,34 +5,8 @@ services:
     image: rabbitmq:3-management
     container_name: rabbitmq
     ports:
-      - "5672:5672"     # AMQP
-      - "15672:15672"   # Web UI
+      - "5672:5672"     # port für AMQP ( für Spring Boot)
+      - "15672:15672"   # port für Web UI (http://localhost:15672)
     environment:
-      RABBITMQ_DEFAULT_USER: guest
-      RABBITMQ_DEFAULT_PASS: guest
-
-  energy-producer:
-    build:
-      context: ./energy-producer
-    container_name: energy-producer
-    ports:
-      - "8080:8080"
-    depends_on:
-      - rabbitmq
-    networks:
-      - energynet
-
-  energy-user:
-    build:
-      context: ./energy-user
-    container_name: energy-user
-    ports:
-      - "8081:8081"
-    depends_on:
-      - rabbitmq
-    networks:
-      - energynet
-
-networks:
-  energynet:
-    driver: bridge
+      RABBITMQ_DEFAULT_USER: admin     # user
+      RABBITMQ_DEFAULT_PASS: admin     # password
