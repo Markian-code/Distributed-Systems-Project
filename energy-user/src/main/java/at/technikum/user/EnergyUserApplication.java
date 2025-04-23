@@ -1,4 +1,4 @@
-package at.technikum.producer;
+package at.technikum.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-public class EnergyProducerApplication {
+public class EnergyUserApplication {
     public static void main(String[] args) {
-        SpringApplication.run(EnergyProducerApplication.class, args);
+        SpringApplication.run(EnergyUserApplication.class, args);
     }
 }
