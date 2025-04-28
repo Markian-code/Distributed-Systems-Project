@@ -1,0 +1,24 @@
+# IntelliJ IDEA / JetBrains
+.idea/
+*.iml
+
+# Maven / Gradle output
+target/
+out/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Java class files
+*.class
+
+# Temporary files
+*.tmp
+*.temp
+
+# Ignore database docker files if needed
+database/data/

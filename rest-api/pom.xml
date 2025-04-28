@@ -1,0 +1,21 @@
+<dependencies>
+    <!-- Spring Boot Web-Starter: Stellt REST-Controller und Webfunktionen bereit -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>${spring-boot.version}</version>
+    </dependency>
+
+    <!-- Spring Boot AMQP-Starter: Ermöglicht Kommunikation mit RabbitMQ -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-amqp</artifactId>
+        <version>${spring-boot.version}</version>
+    </dependency>
+
+    <!-- Jackson-Bibliothek: Für JSON-Serialisierung und -Deserialisierung -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+    </dependency>
+</dependencies>
