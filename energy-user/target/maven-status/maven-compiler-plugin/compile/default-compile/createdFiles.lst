@@ -1,0 +1,4 @@
+at\technikum\user\model\EnergyData.class
+at\technikum\user\consumer\EnergyDataConsumer.class
+at\technikum\user\config\RabbitMQConfig.class
+at\technikum\user\EnergyUserApplication.class

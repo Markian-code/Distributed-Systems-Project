@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="at.technikum.gui.FXMLController">
+
+    <top>
+        <Label text="Energy Dashboard" styleClass="header" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <Button text="Fetch Current Data" onAction="#handleFetchCurrent"/>
+            <Button text="Fetch Data for Hour 10" onAction="#handleFetchHour"/>
+            <TextArea fx:id="outputArea" prefHeight="300" prefWidth="400"/>
+        </VBox>
+    </center>
+
+</BorderPane>

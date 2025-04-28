@@ -1,0 +1,4 @@
+at\technikum\api\RestApiApplication.class
+at\technikum\api\controller\EnergyDataController.class
+at\technikum\api\repository\FakeEnergyDataRepository.class
+at\technikum\api\model\EnergyData.class
