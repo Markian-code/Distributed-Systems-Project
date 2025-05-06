@@ -1,4 +1,6 @@
 at\technikum\api\RestApiApplication.class
+at\technikum\api\model\EnergyData.class
+at\technikum\api\config\RabbitMQConfig.class
+at\technikum\api\controller\EnergyDataProducer.class
 at\technikum\api\controller\EnergyDataController.class
 at\technikum\api\repository\FakeEnergyDataRepository.class
-at\technikum\api\model\EnergyData.class
