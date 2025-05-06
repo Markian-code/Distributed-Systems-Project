@@ -35,7 +35,7 @@
             <version>2.16.1</version>
         </dependency>
 
-        <!-- ✅ CORRECT Logback for Spring Boot 3 (Avoids crash) -->
+        <!-- CORRECT Logback for Spring Boot 3 (Avoids crash) -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
