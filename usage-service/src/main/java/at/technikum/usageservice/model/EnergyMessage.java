@@ -1,4 +1,4 @@
-package at.technikum.usageservice;
+package at.technikum.usageservice.model;
 
 public class EnergyMessage {
 
@@ -7,8 +7,7 @@ public class EnergyMessage {
     private double kwh;
     private String datetime;
 
-    public EnergyMessage() {
-    }
+    public EnergyMessage() {}
 
     public String getType() {
         return type;

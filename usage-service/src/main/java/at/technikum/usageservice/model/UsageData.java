@@ -1,4 +1,4 @@
-package at.technikum.usageservice;
+package at.technikum.usageservice.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -17,10 +17,8 @@ public class UsageData {
     private double communityUsed;
     private double gridUsed;
 
-    // Standardkonstruktor
     public UsageData() {}
 
-    // Konstruktor für einfaches Erstellen
     public UsageData(int hour, double communityProduced, double communityUsed, double gridUsed) {
         this.hour = hour;
         this.communityProduced = communityProduced;
@@ -28,7 +26,6 @@ public class UsageData {
         this.gridUsed = gridUsed;
     }
 
-    // Getter und Setter
     public Long getId() {
         return id;
     }

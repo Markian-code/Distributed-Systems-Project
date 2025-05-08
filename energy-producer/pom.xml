@@ -7,19 +7,11 @@
     <artifactId>energy-producer</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-<<<<<<< HEAD
-=======
-    <!-- Eigenschaften -->
->>>>>>> fe53726eedcbcfcb9c758e15599fc6cdb0edd032
     <properties>
         <java.version>17</java.version>
         <spring-boot.version>3.2.5</spring-boot.version>
     </properties>
 
-<<<<<<< HEAD
-=======
-    <!-- Importiert das Spring Boot BOM -->
->>>>>>> fe53726eedcbcfcb9c758e15599fc6cdb0edd032
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -33,33 +25,18 @@
     </dependencyManagement>
 
     <dependencies>
-<<<<<<< HEAD
-=======
-        <!-- Web ist optional, falls REST nötig -->
->>>>>>> fe53726eedcbcfcb9c758e15599fc6cdb0edd032
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
-<<<<<<< HEAD
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-=======
-        <!-- Für RabbitMQ -->
->>>>>>> fe53726eedcbcfcb9c758e15599fc6cdb0edd032
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
-
-<<<<<<< HEAD
-=======
-        <!-- Für JSON -->
->>>>>>> fe53726eedcbcfcb9c758e15599fc6cdb0edd032
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -69,18 +46,11 @@
 
     <build>
         <plugins>
-<<<<<<< HEAD
-=======
-            <!-- Spring Boot Plugin -->
->>>>>>> fe53726eedcbcfcb9c758e15599fc6cdb0edd032
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
             </plugin>
-<<<<<<< HEAD
-
-            <!-- 💬 Das Plugin mit "-parameters" Argument -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -93,8 +63,6 @@
                     </compilerArgs>
                 </configuration>
             </plugin>
-=======
->>>>>>> fe53726eedcbcfcb9c758e15599fc6cdb0edd032
         </plugins>
     </build>
 </project>

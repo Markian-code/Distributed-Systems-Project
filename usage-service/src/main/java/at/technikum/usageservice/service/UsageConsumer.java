@@ -1,4 +1,8 @@
-package at.technikum.usageservice;
+package at.technikum.usageservice.service;
+
+import at.technikum.usageservice.model.EnergyMessage;
+import at.technikum.usageservice.model.UsageData;
+import at.technikum.usageservice.repository.UsageRepository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

@@ -1,6 +1,16 @@
+<<<<<<< HEAD
+server:
+  port: 8082
+
+=======
+>>>>>>> fe53726eedcbcfcb9c758e15599fc6cdb0edd032
 spring:
   rabbitmq:
     host: localhost
     port: 5672
     username: spring
     password: spring123
+<<<<<<< HEAD
+    virtual-host: /
+=======
+>>>>>>> fe53726eedcbcfcb9c758e15599fc6cdb0edd032
