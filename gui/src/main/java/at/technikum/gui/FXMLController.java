@@ -17,7 +17,7 @@ public class FXMLController {
     // Ruft aktuelle Energiedaten vom REST API ab
     @FXML
     public void handleFetchCurrent() {
-        String endpoint = "http://localhost:8080/energy/current";
+        String endpoint = "http://localhost:8082/energy/current";
         String result = fetchData(endpoint);
         outputArea.setText("Aktuelle Daten:\n" + result);
     }
@@ -25,7 +25,7 @@ public class FXMLController {
     // Ruft Energiedaten für Stunde 10 vom REST API ab
     @FXML
     public void handleFetchHour() {
-        String endpoint = "http://localhost:8080/energy/history?hour=10";
+        String endpoint = "http://localhost:8082/energy/history?hour=10";
         String result = fetchData(endpoint);
         outputArea.setText("Daten für Stunde 10:\n" + result);
     }
