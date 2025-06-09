@@ -4,3 +4,9 @@ server:
 spring:
   application:
     name: usage-service
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
