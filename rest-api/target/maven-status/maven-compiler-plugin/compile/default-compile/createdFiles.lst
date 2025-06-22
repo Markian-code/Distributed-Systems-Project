@@ -1,6 +1,12 @@
 at\technikum\api\RestApiApplication.class
-at\technikum\api\model\EnergyData.class
+at\technikum\api\messagequeue\EnergyData.class
+at\technikum\api\model\UsageData.class
 at\technikum\api\config\RabbitMQConfig.class
+at\technikum\api\model\UsageEntity.class
 at\technikum\api\controller\EnergyDataProducer.class
+at\technikum\api\model\CurrentPercentageEntity.class
+at\technikum\api\repository\UsageRepository.class
 at\technikum\api\controller\EnergyDataController.class
-at\technikum\api\repository\FakeEnergyDataRepository.class
+at\technikum\api\repository\CurrentPercentageRepository.class
+at\technikum\api\service\EnergyDataConsumer.class
+at\technikum\api\service\EnergyDataService.class

@@ -1,11 +1,20 @@
 package messagequeue;
 
-public class Message {
-    public enum MessageType { PRODUCE, CONSUME }
+import java.io.Serializable;
 
-    private final String sender;
-    private final MessageType type;
-    private final double amount;
+public class Message implements Serializable {
+
+    public enum MessageType {
+        PRODUCE,
+        CONSUME
+    }
+
+    private String sender;
+    private MessageType type;
+    private double amount;
+
+    // WICHTIG: Default-Konstruktor für Deserialisierung
+    public Message() {}
 
     public Message(String sender, MessageType type, double amount) {
         this.sender = sender;
@@ -17,12 +26,24 @@ public class Message {
         return sender;
     }
 
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
     public MessageType getType() {
         return type;
     }
 
+    public void setType(MessageType type) {
+        this.type = type;
+    }
+
     public double getAmount() {
         return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
     @Override

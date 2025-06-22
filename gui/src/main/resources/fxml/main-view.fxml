@@ -2,20 +2,56 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="at.technikum.gui.FXMLController">
 
+    <!-- Kopfzeile -->
     <top>
-        <Label text="Energy Dashboard" styleClass="header" BorderPane.alignment="CENTER"/>
+        <Label text="Energy Dashboard" BorderPane.alignment="CENTER">
+            <style>
+                -fx-font-size: 24px;
+                -fx-font-weight: bold;
+                -fx-padding: 10;
+            </style>
+        </Label>
     </top>
 
+    <!-- Hauptinhalt -->
     <center>
-        <VBox spacing="10" alignment="CENTER">
-            <Button text="Fetch Current Data" onAction="#handleFetchCurrent"/>
-            <Button text="Fetch Data for Hour 10" onAction="#handleFetchHour"/>
-            <TextArea fx:id="outputArea" prefHeight="300" prefWidth="400"/>
+        <VBox spacing="15" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- Datumsbereich -->
+            <HBox spacing="10" alignment="CENTER">
+                <DatePicker fx:id="startDatePicker" promptText="Start date"/>
+                <DatePicker fx:id="endDatePicker" promptText="End date"/>
+                <Button fx:id="btnLoadData" text="Load History"/>
+            </HBox>
+
+            <!-- Buttons zur Abfrage -->
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Fetch Current Data" onAction="#handleFetchCurrent"/>
+                <Button text="Fetch Data for Hour 10" onAction="#handleFetchHour"/>
+            </HBox>
+
+            <!-- Textausgabe -->
+            <TextArea fx:id="outputArea" prefHeight="250" prefWidth="600" wrapText="true"/>
+
+            <!-- Tabelle mit historischen Daten -->
+            <TableView fx:id="historyTable" prefWidth="600">
+                <columns>
+                    <TableColumn fx:id="colHour" text="Hour" prefWidth="150"/>
+                    <TableColumn fx:id="colCommunity" text="Community Used (kWh)" prefWidth="150"/>
+                    <TableColumn fx:id="colGrid" text="Grid Used (kWh)" prefWidth="150"/>
+                    <TableColumn fx:id="colPortion" text="Grid Portion (%)" prefWidth="150"/>
+                </columns>
+            </TableView>
         </VBox>
     </center>
 

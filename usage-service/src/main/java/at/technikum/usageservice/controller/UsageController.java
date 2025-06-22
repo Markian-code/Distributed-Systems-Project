@@ -1,22 +1,31 @@
 package at.technikum.usageservice.controller;
 
 import at.technikum.usageservice.model.UsageData;
-import at.technikum.usageservice.repository.UsageRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import at.technikum.usageservice.service.UsageService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/usage")
 public class UsageController {
-    private final UsageRepository usageRepository;
 
-    public UsageController(UsageRepository usageRepository) {
-        this.usageRepository = usageRepository;
+    @Autowired
+    private UsageService usageService;
+
+    @GetMapping
+    public List<UsageData> getAll() {
+        return usageService.getAllUsageData();
     }
 
-    @GetMapping("/usages")
-    public List<UsageData> getAllUsages() {
-        return usageRepository.findAll();
+    @PostMapping
+    public UsageData create(@RequestBody UsageData usageData) {
+        return usageService.saveUsageData(usageData);
+    }
+
+    @DeleteMapping
+    public void deleteAll() {
+        usageService.deleteAllUsageData();
     }
 }

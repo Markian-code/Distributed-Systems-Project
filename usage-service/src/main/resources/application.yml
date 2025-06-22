@@ -1,6 +1,26 @@
 server:
-  port: 8081
+  port: 8084
 
 spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/energydb
+    username: energy_user
+    password: energy_pass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
   application:
     name: usage-service
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /
