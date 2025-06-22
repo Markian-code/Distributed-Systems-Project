@@ -1,25 +1,33 @@
 package at.technikum.usageservice.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity
-public class UsageData {
+@Table(name = "usage_data")
+public class UsageData implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int hour;
+    @Column(name = "usage_hour", nullable = false)
+    private LocalDateTime hour;
+
+    @Column(name = "community_produced", nullable = false)
     private double communityProduced;
+
+    @Column(name = "community_used", nullable = false)
     private double communityUsed;
+
+    @Column(name = "grid_used", nullable = false)
     private double gridUsed;
 
-    public UsageData() {}
+    public UsageData() {
+    }
 
-    public UsageData(int hour, double communityProduced, double communityUsed, double gridUsed) {
+    public UsageData(LocalDateTime hour, double communityProduced, double communityUsed, double gridUsed) {
         this.hour = hour;
         this.communityProduced = communityProduced;
         this.communityUsed = communityUsed;
@@ -30,11 +38,11 @@ public class UsageData {
         return id;
     }
 
-    public int getHour() {
+    public LocalDateTime getHour() {
         return hour;
     }
 
-    public void setHour(int hour) {
+    public void setHour(LocalDateTime hour) {
         this.hour = hour;
     }
 

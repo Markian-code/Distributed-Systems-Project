@@ -1,0 +1,9 @@
+POST http://localhost:8082/producer/send
+Content-Type: application/json
+
+{
+  "hour": "2025-06-20T10:00:00",
+  "communityProduced": 100.0,
+  "communityUsed": 50.0,
+  "gridUsed": 10.0
+}

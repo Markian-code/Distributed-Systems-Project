@@ -1,6 +1,0 @@
-at\technikum\producer\service\MessageSender.class
-at\technikum\producer\controller\EnergyProducerController.class
-at\technikum\producer\EnergyProducerApplication.class
-at\technikum\producer\model\EnergyData.class
-at\technikum\producer\config\RabbitMQConfig.class
-at\technikum\producer\service\EnergyGenerationService.class

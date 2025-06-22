@@ -10,17 +10,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
-    public static final String ENERGY_USAGE_QUEUE = "energy-usage-queue";
     public static final String ENERGY_DATA_QUEUE = "energy-data-queue";
 
-    @Bean
-    public Queue energyUsageQueue() {
-        return new Queue(ENERGY_USAGE_QUEUE, false);
-    }
 
     @Bean
     public Queue energyDataQueue() {
-        return new Queue(ENERGY_DATA_QUEUE, false);
+        return new Queue(ENERGY_DATA_QUEUE, true);
     }
 
     @Bean

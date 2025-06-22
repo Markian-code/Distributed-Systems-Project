@@ -1,49 +1,37 @@
 package at.technikum.user.model;
 
 public class EnergyData {
-    private String userId;
-    private String producerId;
-    private double kWh;
-    private long timestamp;
 
-    public EnergyData() {}
+    private String type;
+    private String association;
+    private double kwh;
+    private String datetime;
 
-    public EnergyData(String userId, String producerId, double kWh, long timestamp) {
-        this.userId = userId;
-        this.producerId = producerId;
-        this.kWh = kWh;
-        this.timestamp = timestamp;
+    // Constructor
+    public EnergyData(String type, String association, double kwh, String datetime) {
+        this.type = type;
+        this.association = association;
+        this.kwh = kwh;
+        this.datetime = datetime;
     }
 
-    public String getUserId() {
-        return userId;
-    }
+    // Getters and setters
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
+    public String getAssociation() { return association; }
+    public void setAssociation(String association) { this.association = association; }
 
-    public String getProducerId() {
-        return producerId;
-    }
+    public double getKwh() { return kwh; }
+    public void setKwh(double kwh) { this.kwh = kwh; }
 
-    public void setProducerId(String producerId) {
-        this.producerId = producerId;
-    }
+    public String getDatetime() { return datetime; }
+    public void setDatetime(String datetime) { this.datetime = datetime; }
 
-    public double getKWh() {
-        return kWh;
-    }
-
-    public void setKWh(double kWh) {
-        this.kWh = kWh;
-    }
-
-    public long getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
+    @Override
+    public String toString() {
+        return "[USER], association=" + association
+                + ", kwh=" + String.format("%.4f", kwh)
+                + ", datetime=" + datetime;
     }
 }

@@ -4,6 +4,15 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Parent Spring Boot Starter -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version>
+        <relativePath/>
+    </parent>
+
+
     <groupId>at.technikum</groupId>
     <artifactId>energy-user</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -11,54 +20,58 @@
 
     <properties>
         <java.version>17</java.version>
-        <spring.boot.version>3.1.4</spring.boot.version>
     </properties>
 
     <dependencies>
-        <!-- Spring Boot Grundfunktionen -->
+        <!-- Spring Boot Basic -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>${spring.boot.version}</version>
         </dependency>
 
-        <!-- Unterstützung für RabbitMQ -->
+        <!-- RabbitMQ Support -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
-            <version>${spring.boot.version}</version>
         </dependency>
 
-        <!-- Unterstützung für JSON (Jackson) -->
+        <!-- JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.15.0</version>
         </dependency>
 
-        <!-- Optionale Unterstützung für Konfigurationsverarbeitung -->
+        <!-- Messagequeue Module (damit Message importiert werden kann) -->
+        <dependency>
+            <groupId>at.technikum</groupId>
+            <artifactId>messagequeue</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- Optional: config processor -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
-            <version>${spring.boot.version}</version>
             <optional>true</optional>
+        </dependency>
+
+        <!-- JUnit 5 for Testing -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
+
+
     <build>
         <plugins>
-            <!-- Spring Boot Plugin für ausführbare JAR-Datei -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring.boot.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
                 <configuration>
                     <mainClass>at.technikum.user.EnergyUserApplication</mainClass>
                 </configuration>
